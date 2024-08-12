@@ -1,14 +1,15 @@
 const mysql = require('mysql2');
-require('dotenv').config();
 
+// Database configuration
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306 // Gunakan port dari file .env atau default ke 3306
+  host: 'localhost', // Replace with your database host
+  user: 'root',      // Replace with your database user
+  password: '',      // Replace with your database password
+  database: 'chatbot', // Replace with your database name
+  port: 3308        // Replace with your database port (default is 3306)
 });
 
+// Connect to the database
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err.message);
